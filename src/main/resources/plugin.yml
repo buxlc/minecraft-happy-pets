@@ -1,0 +1,18 @@
+name: HappyPets
+version: 1.0.2
+main: cn.bucheng.happypets.HappyPetsPlugin
+api-version: '1.21.4'
+description: 趣味生物宠物、成长强化、互动小游戏与骑乘
+author: Bucheng
+commands:
+  pets:
+    description: 打开宠物家园
+    aliases: [pet, happypets, hpets]
+    usage: /pets
+permissions:
+  happypets.use:
+    description: 使用宠物和互动功能
+    default: true
+  happypets.admin:
+    description: 管理宠物配置和发放饲料
+    default: op

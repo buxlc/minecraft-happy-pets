@@ -1,0 +1,68 @@
+# HappyPets · Spigot 1.21.4 / Java 21
+# 修改后执行 /pets reload；管理员界面保存后立即生效。
+enabled: true
+# 文件位于插件目录 lang/；支持 zh_CN、en_US 和自行复制添加的语言文件。
+language: zh_CN
+limits:
+  max-pets: 5
+capture:
+  # 末影龙、凋灵、监守者、远古守卫者始终无法捕获。
+  excluded-types: []
+  disabled-worlds: []
+feed:
+  material: COOKIE
+  recipe-enabled: true
+growth:
+  max-level: 50
+  adult-level: 10
+  # 每次升级需求 = ceil(xp-base * xp-factor ^ (当前等级 - 1))。
+  xp-base: 100
+  xp-factor: 1.18
+  points-per-level: 2
+  max-bond: 1000
+rewards:
+  feed:
+    xp: 40
+    bond: 5
+    cooldown-seconds: 30
+  play:
+    xp: 80
+    bond: 15
+    cooldown-seconds: 60
+  travel:
+    xp: 15
+    distance: 40
+    interval-seconds: 20
+upgrades:
+  speed:
+    max: 30
+    per-level: 0.06
+  health:
+    max: 30
+    per-level: 2.0
+  jump:
+    max: 20
+    per-level: 0.02
+riding:
+  enabled: true
+  flight-enabled: true
+  # 速度单位为格/tick。强化后仍受 max-speed 限制。
+  ground-speed: 0.28
+  fly-speed: 0.35
+  swim-speed: 0.3
+  max-speed: 1.2
+  flying-ceiling: 300
+  flying-types: [BAT, PARROT, BEE, ALLAY, PHANTOM, VEX, GHAST, BLAZE]
+  aquatic-types: [COD, SALMON, TROPICAL_FISH, PUFFERFISH, DOLPHIN, SQUID, GLOW_SQUID, AXOLOTL, TURTLE, GUARDIAN]
+games:
+  enabled: true
+protection:
+  invulnerable: true
+follow:
+  distance: 3.0
+  teleport-distance: 24.0
+performance:
+  # 定时保存复制主线程快照，文件序列化和写入由单独线程完成。
+  autosave-seconds: 60
+  # 仅遍历当前放出的宠物；不扫描全世界生物，也不保持区块加载。
+  follow-ticks: 10
